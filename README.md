@@ -1,11 +1,13 @@
-# README - _seeker_bot (screenshot_bot)
+# README - _seeker_bot (telegram_screenshot_bot)
+A Telegram bot that captures desktop screenshots remotely.<br>
+Run it on your PC and send `/capture` via Telegram to receive an instant image of your current desktop.
 
 ---
 
 ## Files Overview
 - **.env file**: Contains the `TOKEN_KEY` necessary for authenticating the Telegram bot.  
 - **_seeker_main.py**: The main Python script that runs the Telegram bot.  
-- **_seeker_main.exe**: Executable version of the `.py` file (The `.exe` file still contains some errors/issues).  
+- **_seeker_main.exe**: Executable version of the `.py` file (The `.exe` file still contains some errors/issues, so ***I removed it***).  
 - **start_bot.bat**: A batch file that allows you to run the Python script in CMD.
 
 ---
@@ -45,6 +47,7 @@ Please ensure you read this `README.md` file carefully before attempting to run 
 Failure to follow the instructions may result in issues with bot functionality.  
 All files within this folder are essential for the bot to operate correctly.  
 Ensure that the `.py`, `.bat`, or `.exe` file has been successfully executed on at least one computer (or server) before using the bot.  
-I do not take any responsibility for security concerns or any issues that arise from the use or deployment of this bot.
+I don't accept any responsibility for security concerns or any issues that may arise from the use or deployment of this bot.
 
-**Created by:** Sevenplx / Chemitha Sathsilu
+**Created by:** [Sevenplx / Chemitha Sathsilu](https://github.com/Sevenplx)
+
