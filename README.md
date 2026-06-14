@@ -1,53 +1,75 @@
 # README - _seeker_bot (telegram_screenshot_bot)
-A Telegram bot that captures desktop screenshots remotely.<br>
+
+A Telegram bot that captures desktop screenshots remotely.  
 Run it on your PC and send `/capture` via Telegram to receive an instant image of your current desktop.
 
 ---
 
 ## Files Overview
-- **.env file**: Contains the `TOKEN_KEY` necessary for authenticating the Telegram bot.  
+
+- **.env file**: Contains the `TOKEN` necessary for authenticating the Telegram bot.  
 - **_seeker_main.py**: The main Python script that runs the Telegram bot.  
-- **_seeker_main.exe**: Executable version of the `.py` file (The `.exe` file still contains some errors/issues, so ***I removed it***).  
-- **start_bot.bat**: A batch file that allows you to run the Python script in CMD.
+- **start_bot.bat**: A batch file that allows you to run the Python script in CMD.  
+- **requirements.txt**: List of Python dependencies.
+
+**Note**: The `.exe` file was removed due to issues.
+
+---
+
+## Setup Instructions (Step-by-Step A-Z Guide)
+
+### 1. Create Your Telegram Bot
+1. Open Telegram and search for **@BotFather**.
+2. Start a chat with it and send the command `/newbot`.
+3. Follow the prompts: give your bot a name and a username (must end with `_bot`).
+4. **BotFather** will give you an **API Token** (format like `123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11`).  
+   **Copy and save this token securely.**
+
+### 2. Prepare the `.env` File
+1. In the project folder, create a new file named exactly `.env`.
+2. Open it with Notepad (or any text editor) and add this single line:  
+   `TOKEN={Telegram bot token goes here}`  
+   (Replace `{Telegram bot token goes here}` with the token you received from BotFather).
+3. Save the file.
+
+### 3. Install Required Packages
+1. Make sure **Python** is installed on your PC (download from python.org if needed).
+2. Open **Command Prompt** (CMD) and navigate to the project folder (use `cd path\to\folder`).
+3. Run this command:  
+   `pip install -r requirements.txt`
+
+### 4. Run the Bot (Critical Instructions)
+1. **You must keep a Command Prompt / Terminal window open at all times.**  
+   Closing the window will stop the bot and prevent screenshots from working.
+2. Double-click `start_bot.bat` (recommended), **OR** run this command in CMD:  
+   `python _seeker_main.py`
+3. The terminal will show "Running bot now..." — leave this window open/minimized.
+4. **Important limitations**:
+   - Do **not** run this on a server, VPS, or any headless environment.
+   - Do **not** use Task Scheduler, Auto-Start services, or run it in the background without an active logged-in Windows desktop session.
+   - These methods usually result in **black/empty screenshots** because `pyscreenshot` needs a real graphical desktop environment.
+
+### 5. How to Use the Bot
+- Open Telegram and start a chat with your bot (search by the username you created).
+- Send `/start` → Bot will reply with a welcome message.
+- Send `/capture` → Bot will capture the current desktop screenshot and send it back to you.
 
 ---
 
 ## Important Information
 
-### .env File
-The `.env` file is crucial for the proper functioning of the bot. It contains the bot's authentication token, which is required to connect to the Telegram API.  
-Without this file or its correct configuration, the bot will not function, and you will receive the following message:  
-`You need to export TOKEN=YOUR_TELEGRAM_BOT_TOKEN`
+### `.env` File
+Without a correctly configured `.env` file, the bot will fail with the message:  
+`You need to export TOKEN={Telegram bot token goes here}`
 
-### start_bot.bat
-The `start_bot.bat` file can be used to run the bot in the background.  
-This batch file is designed to loop every 20 minutes due to issues encountered with the Telegram bot/Python.  
-You may configure it to automatically start when your computer boots up by following the steps below:
-
----
-
-## Setting Up Auto-Start with Task Scheduler
-To run the bot automatically when your PC starts, use Task Scheduler:
-
-1. Open **Task Scheduler** by searching for it in the Start menu.  
-2. Click on **Create Task**.  
-3. In the **General** tab, provide a name for the task (e.g., “Run Seeker Bot”).  
-4. In the **Triggers** tab, set the trigger to **At startup**.  
-5. In the **Actions** tab, click **New** and set the action to **Start a Program**:
-   - Select the `.bat` file (`start_bot.bat`) or Python executable (`_seeker_bot.exe`).  
-     *(I prefer using .bat files due to certain issues encountered with .exe files.)*  
-   - Provide the full path to the `_seeker_main.py` script as an argument.  
-6. In the **Conditions** tab, uncheck **"Stop if the computer switches to battery power"** to ensure the bot continues running.  
-7. Click **OK** to create the task.
+### `start_bot.bat`
+This file helps launch the script. Keep the resulting terminal window open — it is required for the bot to function properly.
 
 ---
 
 ## Disclaimer
-Please ensure you read this `README.md` file carefully before attempting to run the Telegram bot.  
-Failure to follow the instructions may result in issues with bot functionality.  
-All files within this folder are essential for the bot to operate correctly.  
-Ensure that the `.py`, `.bat`, or `.exe` file has been successfully executed on at least one computer (or server) before using the bot.  
-I don't accept any responsibility for security concerns or any issues that may arise from the use or deployment of this bot.
+Read this README carefully before use.  
+This tool is intended for **personal use on your own PC** only.  
+I am not responsible for any security issues, misuse, or problems that may arise.
 
-**Created by:** [Sevenplx / Chemitha Sathsilu](https://github.com/Sevenplx)
-
+**Created by:** [Sevenplx / Chemitha Sathsilu](https://github.com/chemitha)
