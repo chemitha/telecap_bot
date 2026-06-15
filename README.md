@@ -36,7 +36,7 @@ Run it on your PC and send `/capture` via Telegram to receive an instant image o
 1. Make sure **Python** is installed on your PC (download from python.org if needed).
 2. Open **Command Prompt** (CMD) and navigate to the project folder (use `cd path\to\folder`).
 3. Run this command:  
-   `pip install -r requirements.txt`
+   `python -m pip install -r requirements.txt`
 
 ### 4. Run the Bot (Critical Instructions)
 1. **You must keep a Command Prompt / Terminal window open at all times.**  
