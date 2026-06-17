@@ -38,9 +38,13 @@ Run it on your PC and send `/capture` via Telegram to receive an instant image o
 3. Run this command:  
    `python -m pip install -r requirements.txt`
 
+> ⚠️ **Python 3.14+ Compatibility Note:** If the bot instantly crashes on startup with a `typing.Union` or `AttributeError`, your local packages are outdated for your newer Python version. Force an update by running:
+> ```cmd
+> pip install --upgrade python-telegram-bot httpcore httpx
+> ```
+
 ### 4. Run the Bot (Critical Instructions)
-1. **You must keep a Command Prompt / Terminal window open at all times.**  
-   Closing the window will stop the bot and prevent screenshots from working.
+1. **You must keep a Command Prompt / Terminal window open at all times.** Closing the window will stop the bot and prevent screenshots from working.
 2. Double-click `start_bot.bat` (recommended), **OR** run this command in CMD:  
    `python _seeker_main.py`
 3. The terminal will show "Running bot now..." — leave this window open/minimized.
