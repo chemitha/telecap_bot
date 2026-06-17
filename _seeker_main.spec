@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['neko_seeker_main.py'],
+    ['_seeker_main.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='neko_seeker_main',
+    name='_seeker_main',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
