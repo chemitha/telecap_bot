@@ -2,7 +2,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 import pyscreenshot as ImageGrab
 import os
-import time
+import asyncio  # Changed: added for async sleeping
 from dotenv import load_dotenv
 
 # Load the environment variables from the .env file
@@ -23,12 +23,14 @@ async def start(update: Update, context: CallbackContext):
     await update.message.reply_text(
         "Welcome! Send a /capture request to take a screenshot of the bot's desktop."
     )
+
 # Define the /capture command (asynchronous)
 async def capture(update: Update, context: CallbackContext):
     """Handles the /capture command."""
     await update.message.reply_text("Capturing the screen in 1 seconds...")
-    print("\aHeads up! Taking a new screenshot in 1 seconds.")  # Terminal alert
-    time.sleep(1)
+    print("Heads up! Taking a new screenshot in 1 seconds.")  
+    
+    await asyncio.sleep(1)  # Changed: proper non-blocking async sleep
 
     # Capture the screenshot
     screenshot = ImageGrab.grab()
@@ -46,5 +48,5 @@ application.add_handler(CommandHandler('start', start))
 application.add_handler(CommandHandler('capture', capture))
 
 # Start the bot
-print(" Running bot now...")
+print("Running bot now... Press Ctrl+C to stop.")
 application.run_polling()
