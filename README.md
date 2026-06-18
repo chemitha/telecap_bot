@@ -59,6 +59,11 @@ Run it on your PC and send `/capture` via Telegram to receive an instant image o
 - Send `/capture` → Bot will capture the current desktop screenshot and send it back to you.
 
 ---
+## Video Walkthrough
+
+<video src="https://github.com/user-attachments/assets/742a8235-e7c1-44c3-88ae-37cbe79ed041" controls width="100%" max-width="750px"></video>
+
+---
 
 ## Important Information
 
